@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C4779DB2D5F97A30007A869 /* FaceTest Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C4779DA2D5F97A30007A869 /* FaceTest Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C9F7BE92D5FE88D0084C998 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C9F7BE72D5FE8850084C998 /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5C4779DA2D5F97A30007A869 /* FaceTest Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FaceTest Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4779EC2D5F97A40007A869 /* FaceTest Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FaceTest Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4779F62D5F97A40007A869 /* FaceTest Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FaceTest Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9F7BE72D5FE8850084C998 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -101,6 +103,7 @@
 		5C4779CD2D5F97A30007A869 = {
 			isa = PBXGroup;
 			children = (
+				5C9F7BE72D5FE8850084C998 /* ReadMe.md */,
 				5C4779DE2D5F97A30007A869 /* FaceTest Watch App */,
 				5C4779EF2D5F97A40007A869 /* FaceTest Watch AppTests */,
 				5C4779F92D5F97A40007A869 /* FaceTest Watch AppUITests */,
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9F7BE92D5FE88D0084C998 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
