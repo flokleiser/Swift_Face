@@ -1,1 +1,2 @@
-# Custom apple watch face thingy
+# Custom Apple Watch face 
+

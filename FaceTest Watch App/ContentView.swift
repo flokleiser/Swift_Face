@@ -6,7 +6,7 @@ struct PocketWatchFace: View {
     
     var body: some View {
         ZStack {
-            Image("pocket_watch_background") // Add your watch face image
+            Image("pocket_watch_background") // TODO: shaders
                 .resizable()
                 .scaledToFit()
             
@@ -26,9 +26,52 @@ struct ClockHands: View {
     var body: some View {
         ZStack {
             
+            //ref
+            drawLineRef(lineRotation: 90)
+            drawLineRef(lineRotation: 0)
+            drawLineRef(lineRotation: 30)
+            drawLineRef(lineRotation: 60)
+            drawLineRef(lineRotation: 120)
+            drawLineRef(lineRotation: 150)
+                
+            
             // Hour markers
-            RoundedRectangle(cornerSize:CGSize(width: 3, height: 3))
+            
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
                 .opacity(0.3)
+                .frame(width: 7, height:40)
+                .offset(y:95)
+            
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+                .opacity(0.3)
+                .frame(width: 7, height:40)
+                .offset(y:-110)
+            
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+                .opacity(0.3)
+                .frame(width: 40, height:7)
+                .offset(x:83)
+
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+                .opacity(0.3)
+                .frame(width: 40, height:7)
+                .offset(x:-83)
+            
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+                .opacity(0.3)
+                .frame(width: 40, height:7)
+                .offset(x:-83)
+                .rotationEffect(.degrees(30), anchor: .center)
+            
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+                .opacity(0.3)
+                .frame(width: 40, height:7)
+                .offset(x:-84)
+                .rotationEffect(.degrees(60), anchor: .center)
+
+
+
+
             
             
             // Hour Hand
@@ -69,6 +112,16 @@ struct ClockHands: View {
         let calendar = Calendar.current
         let second = Double(calendar.component(.second, from: currentTime))
         return ( second / 60.0 ) * 360.0;
+    }
+    
+    
+    func drawLineRef(lineRotation: Double) -> some View {
+        return (
+        Rectangle()
+            .frame(width: 5,height:500)
+            .opacity(0.1)
+            .rotationEffect(Angle(degrees: lineRotation))
+        )
     }
 
 }
