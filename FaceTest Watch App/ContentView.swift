@@ -27,47 +27,73 @@ struct ClockHands: View {
         ZStack {
             
             //ref
-            drawLineRef(lineRotation: 90)
-            drawLineRef(lineRotation: 0)
-            drawLineRef(lineRotation: 30)
-            drawLineRef(lineRotation: 60)
-            drawLineRef(lineRotation: 120)
-            drawLineRef(lineRotation: 150)
+//            drawLineRef(lineRotation: 90)
+//            drawLineRef(lineRotation: 0)
+//            drawLineRef(lineRotation: 30)
+//            drawLineRef(lineRotation: 60)
+//            drawLineRef(lineRotation: 120)
+//            drawLineRef(lineRotation: 150)
+            
+            //n,e,s,w
+            drawPill(yOffset: -110, lineRotation: 0)
+            drawPill(yOffset: 95, lineRotation: 0)
+            drawPill(yOffset: 80, lineRotation: 90)
+            drawPill(yOffset: -80, lineRotation: 90)
+            
+            //the rest
+            drawPill(yOffset: -120, lineRotation: 30)
+            drawPill(yOffset: -95, lineRotation: 60)
+            drawPill(yOffset: -95, lineRotation: 120)
+            drawPill(yOffset: -105, lineRotation: 150)
+            
+            drawPill(yOffset: -120, lineRotation: -30)
+            drawPill(yOffset: -95, lineRotation: -60)
+            drawPill(yOffset: -95, lineRotation: -120)
+            drawPill(yOffset: -105, lineRotation: -150)
+
+
+
+
+
                 
             
             // Hour markers
+//            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+//                .opacity(0.3)
+//                .frame(width: 7, height:40)
+//                .offset(y:95)
+//            
+//            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+//                .opacity(0.3)
+//                .frame(width: 7, height:40)
+//                .offset(y:-110)
+//            
+//            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+//                .opacity(0.3)
+//                .frame(width: 40, height:7)
+//                .offset(x:83)
+//
+//            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+//                .opacity(0.3)
+//                .frame(width: 40, height:7)
+//                .offset(x:-83)
+//            
+//            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+//                .opacity(0.3)
+//                .frame(width: 40, height:7)
+//                .offset(x:-83)
+//                .rotationEffect(.degrees(30), anchor: .center)
+//            
+//            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+//                .opacity(0.3)
+//                .frame(width: 40, height:7)
+//                .offset(x:-84)
+//                .rotationEffect(.degrees(60), anchor: .center)
             
-            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
-                .opacity(0.3)
-                .frame(width: 7, height:40)
-                .offset(y:95)
-            
-            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
-                .opacity(0.3)
-                .frame(width: 7, height:40)
-                .offset(y:-110)
-            
-            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
-                .opacity(0.3)
-                .frame(width: 40, height:7)
-                .offset(x:83)
+   
 
-            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
-                .opacity(0.3)
-                .frame(width: 40, height:7)
-                .offset(x:-83)
-            
-            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
-                .opacity(0.3)
-                .frame(width: 40, height:7)
-                .offset(x:-83)
-                .rotationEffect(.degrees(30), anchor: .center)
-            
-            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
-                .opacity(0.3)
-                .frame(width: 40, height:7)
-                .offset(x:-84)
-                .rotationEffect(.degrees(60), anchor: .center)
+
+
 
 
 
@@ -91,6 +117,11 @@ struct ClockHands: View {
                 .frame(width: 2, height: 100)
                 .offset(y: -50)
                 .rotationEffect(.degrees(secondAngle()), anchor: .center)
+            
+            Circle()
+                .fill(Color.white)
+//                .frame(width: 10, height: 10)
+                .frame(width: 15, height: 15)
 
         }
     }
@@ -121,6 +152,17 @@ struct ClockHands: View {
             .frame(width: 5,height:500)
             .opacity(0.1)
             .rotationEffect(Angle(degrees: lineRotation))
+        )
+    }
+    
+    func drawPill(yOffset: Double, lineRotation: Double) -> some View {
+        return(
+            RoundedRectangle(cornerSize:CGSize(width: 8, height: 8))
+                .opacity(0.3)
+                .frame(width: 7, height:40)
+                .offset(y:yOffset)
+                .rotationEffect(Angle(degrees: lineRotation))
+
         )
     }
 
